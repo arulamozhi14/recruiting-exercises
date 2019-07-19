@@ -1,0 +1,66 @@
+import java.util.*;
+public class InventoryAllocator{
+	public static void main(String[] args){
+		//first input
+		HashMap<String, Integer> map=new HashMap<>();
+		map.put("apple",5);
+		map.put("banana",5);
+		map.put("orange",5);
+		
+		//second input using list //with warehouse name and amount
+		List<Inventory> inventory_list=new ArrayList<>();
+		inventory_list.add(new Inventory("owd",{apple:5,orange:10});
+		inventory_list.add(new Inventory("dm",{banana:5,orange:10});
+		Collections.sort(inventory_list,new sortByCost());
+		for(Inventory inventory:inventory_list){
+			System.out.println(inventory);
+		}
+		
+	}
+
+}
+
+class sortByCost implements Comparator<Inventory >{
+	@Override
+	public int compare(Inventory i1, Inventory i2){
+		return i1.getItem_cost.compareTo(i2.getIntem_cost);
+	}
+} 
+
+// inventory class holds of inventory name and cost
+class Inventory{
+	private String inventory_name;
+	private List<Object> items_cost;
+	
+	//constructor
+	Inventory(){}
+	
+	Inventory(String inventory_name, int amount){
+		this.inventory_name=inventory_name;
+		this.amount=amount;
+	}
+	
+	//getter and setter
+	
+	public String getInventory_name(){
+		return inventory_name;
+	}
+	
+	public void setInventory_name(){
+		this.inventory_name=inventory_name;
+	}
+	
+	public List<Object> getItems_cost(){
+		return items_cost;
+	}
+	
+	public void setAmount(){
+		this.amount=amount;
+	}
+	
+	//toString()
+	public String toString(){
+		return "[inventory_name"= + inventory_name + " items = " + items ]";
+	}
+	
+}
